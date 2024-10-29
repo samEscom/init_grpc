@@ -13,14 +13,14 @@ type Repository interface {
 
 var respImplementation Repository
 
-func SetRepository(repository Repository){
+func SetRepository(repository Repository) {
 	respImplementation = repository
 }
 
-func SetStudent(ctx context.Context student *models.Student) error{
+func SetStudent(ctx context.Context, student *models.Student) error {
 	return respImplementation.SetStudent(ctx, student)
 }
 
-func GetStudent(ctx context.Context, id string) (*models.Student, error){
+func GetStudent(ctx context.Context, id string) (*models.Student, error) {
 	return respImplementation.GetStudent(ctx, id)
 }

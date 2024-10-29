@@ -25,7 +25,7 @@ func NewPostgresRepository(url string) (*PostgresRepository, error) {
 func (repo *PostgresRepository) SetStudent(ctx context.Context, student *models.Student) error {
 
 	_, err := repo.db.ExecContext(ctx,
-		"INSERT INTO students (id, name, age) VALUES ($1 $2 $3)",
+		"INSERT INTO students (id, name, age) VALUES ($1, $2, $3)",
 		student.Id, student.Name, student.Age,
 	)
 
